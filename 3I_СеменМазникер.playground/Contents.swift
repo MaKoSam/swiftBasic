@@ -9,13 +9,21 @@
 import Foundation
 import UIKit
 
+enum carType { //Тип автомобиля
+    case classic //Классический автомобиль
+    case SUV //Внедорожник (Спортивно-Утилитарный)
+    case sport //Спортивный автомобиль
+    case bus //Автобус
+    case truck //Грузовик
+}
+
 enum carEngine { //Состояние двигателя
     case on
     case off
 }
 
 enum carLight { //Состояние фар
-    case normal //Свет включен
+    case normal //Ближний свет включен
     case distance //Дальний свет включен
     case off //Свет выключен
 }
@@ -32,6 +40,7 @@ enum inOutTrunk { //Для метода погрузки/выгрузки гру
 
 struct vehicle {
     var brand : String //Марка авто
+    var type : carType //Тип авто
     var color : String //Цвет
     var produceDate : Int //Год производства
     var trunkCapacity : Int //Объем багажника
@@ -42,8 +51,10 @@ struct vehicle {
         willSet {
             if newValue == .on {
                 print("Двигатель запускается.")
+                self.lightState = .normal //При включении двигателя включается ближний свет фар
             } else {
                 print("Двигатель выключен.")
+                self.lightState = .off //При выключении двигателя гаснут фары
             }
         }
     }
@@ -52,7 +63,7 @@ struct vehicle {
     var lightState : carLight {
         willSet {
             if newValue == .normal {
-                print("Включен обычный свет фар.")
+                print("Включен ближний свет фар.")
             } else if newValue == .distance {
                 print("Включен дальний свет фар.")
             } else {
@@ -73,8 +84,9 @@ struct vehicle {
     }
     
     //Упрощенная инициализация машины
-    init(_ brand : String, _ carColor: String, _ date : Int, trunk : Int){
+    init(_ brand : String, _ carColor: String, _ date : Int, _ type: carType, trunk : Int){
         self.brand = brand
+        self.type = type
         self.color = carColor
         self.produceDate = date
         self.trunkCapacity = trunk
@@ -124,29 +136,46 @@ struct vehicle {
     
 }
 
+var sportCar = vehicle("audi", "white", 2017, .sport, trunk: 50)
+
+sportCar.changeEngineState()
+
+sportCar.changeWindowsState()
+
+sportCar.changeLightState(changeTo: .distance)
+
+print(sportCar.trunkInOut(need: .putIn, space: 50))
+print(sportCar.trunkInOut(need: .putOut, space: 30))
+
+sportCar.changeEngineState()
 
 
-var car = vehicle("audi", "white", 2014, trunk: 100)
+var miniven = vehicle("Mercedes", "Black", 2005, .bus, trunk: 1000)
 
-car.changeEngineState()
-car.changeEngineState()
+miniven.changeWindowsState()
 
-car.changeWindowsState()
+miniven.changeLightState(changeTo: .distance)
+miniven.changeLightState(changeTo: .normal)
 
-car.changeLightState(changeTo: .normal)
-car.changeLightState(changeTo: .distance)
+miniven.changeEngineState()
 
-print(car.trunkInOut(need: .putIn, space: 50))
-print(car.trunkInOut(need: .putOut, space: 30))
+miniven.changeWindowsState()
 
-print(car)
+miniven.changeEngineState()
 
 
+var truck = vehicle("Nissan", "Yellow", 2011, .truck, trunk: 5000)
+
+print(truck.trunkInOut(need: .putIn, space: 1000))
+print(truck.trunkInOut(need: .putIn, space: 4000))
+
+print(truck.trunkInOut(need: .putIn, space: 50))
+
+print(truck.trunkInOut(need: .putOut, space: 5000))
+print(truck.trunkInOut(need: .putOut, space: 50))
 
 
-
-
-
-
-
+print(sportCar)
+print(miniven)
+print(truck)
 
