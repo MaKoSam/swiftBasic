@@ -1,4 +1,3 @@
-
 //
 //  main.swift
 //  Lesson Four Home Work
@@ -10,71 +9,63 @@
 import Foundation
 import UIKit
 
-enum carType { //Тип автомобиля
-    case classic //Классический автомобиль
-    case SUV //Внедорожник (Спортивно-Утилитарный)
-    case sport //Спортивный автомобиль
-    case bus //Автобус
-    case truck //Грузовик
-}
-
-enum carEngine { //Состояние двигателя
+enum CarEngine { //Состояние двигателя
     case on
     case off
 }
 
-enum carLight { //Состояние фар
+enum CarLight { //Состояние фар
     case normal //Ближний свет включен
     case distance //Дальний свет включен
+    case full //Противотуманный свет включен
     case off //Свет выключен
 }
 
-enum carWindows { //Состояние окон
+enum CarWindows { //Состояние окон
     case open
     case close
 }
 
-enum inOutTrunk { //Для метода погрузки/выгрузки груза из багажника
+enum InOutCargo { //Для метода погрузки/выгрузки груза из багажника
     case putIn //Загрузка
     case putOut //Выгрузка
 }
 
-struct vehicle {
+class Vehicle {
     var brand : String //Марка авто
-    var type : carType //Тип авто
     var color : String //Цвет
-    var produceDate : Int //Год производства
-    var trunkCapacity : Int //Объем багажника
-    var trunkCapacityFilled : Int //Объем заполненного груза в багажнике
+    var date : Int //Год производства
+    var capacity : Int //Объем багажника
+    var usedCapacity : Int //Объем заполненного груза в багажнике
     
-    //Состояние двигателя с уведомлением при изменении
-    var engineState : carEngine {
+    var engineState : CarEngine { //Состояние двигателя с уведомлением при изменении
         willSet {
             if newValue == .on {
                 print("Двигатель запускается.")
-                self.lightState = .normal //При включении двигателя включается ближний свет фар
+                self.changeLightState(to: .normal) //При включении двигателя включается ближний свет фар
             } else {
                 print("Двигатель выключен.")
-                self.lightState = .off //При выключении двигателя гаснут фары
+                self.changeLightState(to: .off) //При выключении двигателя гаснут фары
+                self.changeWindowsState(to: .close) //При выключении двигателя закрываются окна
             }
         }
     }
     
-    //Состояние света фар с уведомлением при изменении
-    var lightState : carLight {
+    var lightState : CarLight { //Состояние света фар с уведомлением при изменении
         willSet {
             if newValue == .normal {
                 print("Включен ближний свет фар.")
             } else if newValue == .distance {
                 print("Включен дальний свет фар.")
+            } else if newValue == .full {
+                print("Включен противотуманный свет фар.")
             } else {
                 print("Фары выключены.")
             }
         }
     }
     
-    //Состояние окон с уведомлением при изменении
-    var windowsState : carWindows {
+    var windowsState : CarWindows { //Состояние окон с уведомлением при изменении
         willSet {
             if newValue == .open {
                 print("Окна открываются.")
@@ -85,56 +76,68 @@ struct vehicle {
     }
     
     //Упрощенная инициализация машины
-    init(_ brand : String, _ carColor: String, _ date : Int, _ type: carType, trunk : Int){
+    init(_ brand : String, _ carColor: String, _ date : Int, trunk : Int){
         self.brand = brand
-        self.type = type
         self.color = carColor
-        self.produceDate = date
-        self.trunkCapacity = trunk
-        self.trunkCapacityFilled = 0
+        self.date = date
+        self.capacity = trunk
+        self.usedCapacity = 0
         self.engineState = .off
         self.lightState = .off
         self.windowsState = .close
     }
     
     //Метод: запуск и остановка двигателя
-    mutating func changeEngineState(){
-        self.engineState = self.engineState == .on ? .off : .on
+    func changeEngineState(to state: CarEngine){
+        if self.engineState == state {
+            if state == .on {
+                print("Двигатель уже запущен.")
+            } else {
+                print("Двигатель уже выключен.")
+            }
+        } else {
+            self.engineState = state
+        }
     }
     
     //Метод: открытие и закрытие окон
-    mutating func changeWindowsState(){
-        self.windowsState = self.windowsState == .open ? .close : .open
+    func changeWindowsState(to state: CarWindows){
+        self.windowsState = state
     }
     
     //Метод: изменение состояния света фар
-    mutating func changeLightState(changeTo action : carLight){
-        self.lightState = action
+    func changeLightState(to state: CarLight){
+        self.lightState = state
     }
     
+    
+    
+    
     //Метод: погрузка и выгрузка груза определенного объема
-    mutating func trunkInOut(need mass: inOutTrunk, space: Int) -> String{
+    func cargoTransportation(need mass: InOutCargo, space: Int) -> String{
         switch mass { //Определение действия: Выгрузка / Погрузка
             
         case .putIn: //Погрузка
-            if(space + trunkCapacityFilled) > trunkCapacity {
+            if(space + usedCapacity) > capacity {
                 return "Недостаточно свободного места в багажнике"
             } else {
-                trunkCapacityFilled += space
-                return "Груз, объемом \(space)л. погружен; Объем свободного места - \(trunkCapacity - trunkCapacityFilled)л."
+                usedCapacity += space
+                return "Груз, объемом \(space)л. погружен; Объем свободного места - \(capacity - usedCapacity)л."
             }
             
         case .putOut: //Выгрузка
-            if space > trunkCapacityFilled {
-                return "В багажнике только \(trunkCapacityFilled)л. груза"
+            if space > usedCapacity {
+                return "В багажнике только \(usedCapacity)л. груза"
             } else {
-                trunkCapacityFilled -= space
-                return "Груз, объемом \(space)л. выгружен; Объем свободного места - \(trunkCapacity - trunkCapacityFilled)л."
+                usedCapacity -= space
+                return "Груз, объемом \(space)л. выгружен; Объем свободного места - \(capacity - usedCapacity)л."
             }
         }
     }
     
 }
+
+
 
 
 
