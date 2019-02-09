@@ -29,6 +29,9 @@ enum CarWindows { //Состояние окон
 enum InOutCargo { //Для метода погрузки/выгрузки груза из багажника
     case putIn //Загрузка
     case putOut //Выгрузка
+    
+    case putInTrailer //Дополнение для Грузовика: Погрузка в прицеп
+    case putOutTrailer //Дополнение для Грузовика: Выгрузка из прицепа
 }
 
 class Vehicle {
@@ -115,9 +118,9 @@ class Vehicle {
     }
     
     //Метод: погрузка и выгрузка груза определенного объема
-    func cargoTransportation(need mass: InOutCargo, space: Int) -> String{
-        switch mass { //Определение действия: Выгрузка / Погрузка
-            
+    func cargoTransportation(need action: InOutCargo, space: Int) -> String{
+        
+        switch action { //Определение действия: Выгрузка / Погрузка
         case .putIn: //Погрузка
             if(space + usedCapacity) > capacity {
                 return "Недостаточно свободного места в багажнике"
@@ -125,7 +128,6 @@ class Vehicle {
                 usedCapacity += space
                 return "Груз, объемом \(space)л. погружен; Объем свободного места - \(capacity - usedCapacity)л."
             }
-            
         case .putOut: //Выгрузка
             if space > usedCapacity {
                 return "В багажнике только \(usedCapacity)л. груза"
@@ -133,6 +135,8 @@ class Vehicle {
                 usedCapacity -= space
                 return "Груз, объемом \(space)л. выгружен; Объем свободного места - \(capacity - usedCapacity)л."
             }
+        default:
+            return "Действия с прицепом возможны только для Грузовиков."
         }
     }
     
@@ -205,17 +209,55 @@ class SportCar : Vehicle {
 }
 
 class TrunkCar : Vehicle {
-    var cargoTruck : Bool //Есть-ли дополнительный грузовой прицеп
+    var cargoTrailer : Bool //Есть-ли дополнительный грузовой прицеп
     
-    var truckCapacity : Int //Объем грузового прицепа
+    var trailerCapacity : Int //Объем грузового прицепа
+    var usedTrailerCapacity : Int //Использованный грузовой объем прицепа
     
-    override init(_ brand: String, _ color: String, _ date: Int, trunk: Int) {
-        self.cargoTruck = false
-        self.truckCapacity = 0
+    init(_ brand: String, _ color: String, _ date: Int, trunk: Int, trailer: Int) {
+        
+        usedTrailerCapacity = 0
+        if trailer > 0 {
+            cargoTrailer = true
+            trailerCapacity = trailer;
+        } else {
+            cargoTrailer = false
+            trailerCapacity = 0
+        }
         
         super.init(brand, color, date, trunk: trunk)
     }
+    
+    override func cargoTransportation(need action: InOutCargo, space: Int) -> String {
+        switch action {
+        case .putIn: // -> to super.cargoTrz
+            return super.cargoTransportation(need: action, space: space)
+        case .putOut: // -> to super.cargoTrz
+            return super.cargoTransportation(need: action, space: space)
+        case .putInTrailer: // Погрузка груза в карго-прицеп
+            if self.cargoTrailer {
+                if (trailerCapacity - usedTrailerCapacity) > space {
+                    return "Недостаточно места в карго-прицепе."
+                } else {
+                    usedTrailerCapacity += space
+                    return "Груз, объемом \(space)л. погружен в карго-прицеп; Объем свободного места в прицепе - \(trailerCapacity - usedTrailerCapacity)л."
+                }
+            } else {
+                return "Карго-прицеп не прикреплен."
+            }
+        case .putOutTrailer: //Выгрузка груза из карго-прицепа
+            if self.cargoTrailer {
+                if space > usedTrailerCapacity {
+                    return "В карго-прицепе недостаточно груза"
+                } else {
+                    usedTrailerCapacity -= space
+                    return "Груз, объемом \(space)л. выгружен из карго-прицепа; Объем свободного места в прицепе- \(trailerCapacity - usedTrailerCapacity)л."
+                }
+            } else {
+                return "Карго-прицеп не прикреплен."
+            }
+        }
+    }
+    
 }
-
-
 
