@@ -44,40 +44,46 @@ class Vehicle {
     
     var engineState : CarEngine { //Состояние двигателя с уведомлением при изменении
         willSet {
-            if newValue == .on {
-                print("Двигатель запускается.")
-                if self.lightState == .off {
-                    self.changeLightState(to: .normal) //При включении двигателя включается ближний свет фар
+            if newValue != engineState {
+                if newValue == .on {
+                    print("Двигатель \(brand) запускается.")
+                    if self.lightState == .off {
+                        self.changeLightState(to: .normal) //При включении двигателя включается ближний свет фар
+                    }
+                } else {
+                    print("Двигатель \(brand) выключен.")
+                    self.changeLightState(to: .off) //При выключении двигателя гаснут фары
+                    self.changeWindowsState(to: .close) //При выключении двигателя закрываются окна
                 }
-            } else {
-                print("Двигатель выключен.")
-                self.changeLightState(to: .off) //При выключении двигателя гаснут фары
-                self.changeWindowsState(to: .close) //При выключении двигателя закрываются окна
             }
         }
     }
     
     var lightState : CarLight { //Состояние света фар с уведомлением при изменении
         willSet {
-            switch newValue {
-            case .normal:
-                print("Включен ближний свет фар.")
-            case .distance:
-                print("Включен дальний свет фар.")
-            case .full:
-                print("Включен противотуманный свет фар.")
-            case.off:
-                print("Фары выключены.")
+            if newValue != self.lightState {
+                switch newValue {
+                case .normal:
+                    print("Включен ближний свет фар \(brand).")
+                case .distance:
+                    print("Включен дальний свет фар \(brand).")
+                case .full:
+                    print("Включен противотуманный свет фар \(brand).")
+                case.off:
+                    print("Фары \(brand) выключены.")
+                }
             }
         }
     }
     
     var windowsState : CarWindows { //Состояние окон с уведомлением при изменении
         willSet {
-            if newValue == .open {
-                print("Окна открываются.")
-            } else {
-                print("Окна закрываются.")
+            if newValue != windowsState {
+                if newValue == .open {
+                    print("Окна \(brand) открываются.")
+                } else {
+                    print("Окна \(brand) закрываются.")
+                }
             }
         }
     }
@@ -98,9 +104,9 @@ class Vehicle {
     func changeEngineState(to newState: CarEngine){
         if self.engineState == newState {
             if newState == .on {
-                print("Двигатель уже запущен.")
+                print("Двигатель \(brand) уже запущен.")
             } else {
-                print("Двигатель уже выключен.")
+                print("Двигатель \(brand) уже выключен.")
             }
         } else {
             self.engineState = newState
@@ -123,17 +129,17 @@ class Vehicle {
         switch action { //Определение действия: Выгрузка / Погрузка
         case .putIn: //Погрузка
             if(space + usedCapacity) > capacity {
-                return "Недостаточно свободного места в багажнике"
+                return "Недостаточно свободного места в багажнике \(brand)."
             } else {
                 usedCapacity += space
-                return "Груз, объемом \(space)л. погружен; Объем свободного места - \(capacity - usedCapacity)л."
+                return "Груз, объемом \(space)л. погружен в \(brand); Объем свободного места - \(capacity - usedCapacity)л."
             }
         case .putOut: //Выгрузка
             if space > usedCapacity {
-                return "В багажнике только \(usedCapacity)л. груза"
+                return "В багажнике \(brand) только \(usedCapacity)л. груза"
             } else {
                 usedCapacity -= space
-                return "Груз, объемом \(space)л. выгружен; Объем свободного места - \(capacity - usedCapacity)л."
+                return "Груз, объемом \(space)л. выгружен из \(brand); Объем свободного места - \(capacity - usedCapacity)л."
             }
         default:
             return "Действия с прицепом возможны только для Грузовиков."
@@ -157,24 +163,28 @@ class SportCar : Vehicle {
     
     var spoiler : SportSpoiler { //Спойлер
         willSet {
-            switch newValue {
-            case .down:
-                print("Спойлер опущен. Сцепление ухудшено.")
-            case .up:
-                print("Спойлер поднят. Сцепление улучшено.")
+            if newValue != self.spoiler {
+                switch newValue {
+                case .down:
+                    print("Спойлер \(brand) опущен. Сцепление ухудшено.")
+                case .up:
+                    print("Спойлер \(brand) поднят. Сцепление улучшено.")
+                }
             }
         }
     }
     
     var roof : SportRoof { //Крыша
         willSet {
-            switch newValue {
-            case .open:
-                print("Крыша полностью поднята.")
-            case .halfOpen:
-                print("Крыша поднята на половину.")
-            case .close:
-                print("Крыша опущена")
+            if newValue != roof {
+                switch newValue {
+                case .open:
+                    print("Крыша \(brand) полностью опущена.")
+                case .halfOpen:
+                    print("Крыша \(brand) опущена на половину.")
+                case .close:
+                    print("Крыша \(brand) поднята")
+                }
             }
         }
     }
@@ -193,17 +203,19 @@ class SportCar : Vehicle {
         self.roof = newState
     }
     
-    func fastStart() { //Быстрый запуск спорт-машины
-        super.changeEngineState(to: .on)
-        super.changeWindowsState(to: .open)
-        self.changeSpoilerState(to: .up)
-        self.changeRoofState(to: .open)
-    }
-    
-    func fastStop() { //Быстрое выключение спорт-машины
-        super.changeEngineState(to: .off)
-        self.changeRoofState(to: .close)
-        self.changeWindowsState(to: .close)
+    override func changeEngineState(to newState: CarEngine) {
+        //Перегрузка родительской функции
+        switch newState {
+        case .on: //Быстрый запуск спорт-машины
+            super.changeEngineState(to: .on)
+            super.changeWindowsState(to: .open)
+            self.changeSpoilerState(to: .up)
+            self.changeRoofState(to: .open)
+        case .off: //Быстрое выключение спорт-машины
+            super.changeEngineState(to: .off)
+            self.changeSpoilerState(to: .down)
+            self.changeRoofState(to: .close)
+        }
     }
     
 }
@@ -229,6 +241,7 @@ class TrunkCar : Vehicle {
     }
     
     override func cargoTransportation(need action: InOutCargo, space: Int) -> String {
+        //Перегрузка родительской функции
         switch action {
         case .putIn: // -> to super.cargoTrz
             return super.cargoTransportation(need: action, space: space)
@@ -236,28 +249,52 @@ class TrunkCar : Vehicle {
             return super.cargoTransportation(need: action, space: space)
         case .putInTrailer: // Погрузка груза в карго-прицеп
             if self.cargoTrailer {
-                if (trailerCapacity - usedTrailerCapacity) > space {
-                    return "Недостаточно места в карго-прицепе."
-                } else {
+                if (space + usedTrailerCapacity) < trailerCapacity {
                     usedTrailerCapacity += space
-                    return "Груз, объемом \(space)л. погружен в карго-прицеп; Объем свободного места в прицепе - \(trailerCapacity - usedTrailerCapacity)л."
+                    return "Груз, объемом \(space)л. погружен в карго-прицеп \(brand); Объем свободного места в прицепе - \(trailerCapacity - usedTrailerCapacity)л."
+                } else {
+                    return "Недостаточно места в карго-прицепе \(brand)."
                 }
             } else {
-                return "Карго-прицеп не прикреплен."
+                return "Карго-прицеп \(brand) не прикреплен."
             }
         case .putOutTrailer: //Выгрузка груза из карго-прицепа
             if self.cargoTrailer {
                 if space > usedTrailerCapacity {
-                    return "В карго-прицепе недостаточно груза"
+                    return "В карго-прицепе \(brand) недостаточно груза"
                 } else {
                     usedTrailerCapacity -= space
-                    return "Груз, объемом \(space)л. выгружен из карго-прицепа; Объем свободного места в прицепе- \(trailerCapacity - usedTrailerCapacity)л."
+                    return "Груз, объемом \(space)л. выгружен из карго-прицепа \(brand); Объем свободного места в прицепе- \(trailerCapacity - usedTrailerCapacity)л."
                 }
             } else {
-                return "Карго-прицеп не прикреплен."
+                return "Карго-прицеп \(brand) не прикреплен."
             }
         }
     }
     
 }
 
+var AudiTT = SportCar("Audi TT", "White", 2017)
+
+AudiTT.changeEngineState(to: .on)
+
+AudiTT.changeLightState(to: .full)
+AudiTT.changeRoofState(to: .close)
+AudiTT.changeWindowsState(to: .close)
+
+AudiTT.changeEngineState(to: .off)
+
+var VolvoTrunk = TrunkCar("Volvo", "Black", 2010, trunk: 10, trailer: 70000)
+
+VolvoTrunk.changeEngineState(to: .on)
+VolvoTrunk.changeLightState(to: .distance)
+
+print(VolvoTrunk.cargoTransportation(need: .putIn, space: 7))
+print(VolvoTrunk.cargoTransportation(need: .putIn, space: 10))
+print(VolvoTrunk.cargoTransportation(need: .putOut, space: 9))
+print(VolvoTrunk.cargoTransportation(need: .putOut, space: 2))
+
+print(VolvoTrunk.cargoTransportation(need: .putInTrailer, space: 48500))
+print(VolvoTrunk.cargoTransportation(need: .putInTrailer, space: 30000))
+print(VolvoTrunk.cargoTransportation(need: .putOutTrailer, space: 54000))
+print(VolvoTrunk.cargoTransportation(need: .putOutTrailer, space: 15500))
