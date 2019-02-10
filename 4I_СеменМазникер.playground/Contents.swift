@@ -146,6 +146,16 @@ class Vehicle {
         }
     }
     
+    func printInfo (){
+        print("Наименование - ", self.brand)
+        print("Цвет - ", self.color)
+        print("Год выпуска - ", self.date)
+        print("Багажник, обьемом \(capacity)л., заполнен на \(usedCapacity)л.")
+        print("Двигатель - ", self.engineState)
+        print("Фары - ", self.lightState)
+        print("Окна - ", self.windowsState)
+    }
+    
 }
 
 enum SportSpoiler { //Спортивная машина может поднимать/опускать спойлер
@@ -218,6 +228,13 @@ class SportCar : Vehicle {
         }
     }
     
+    override func printInfo() {
+        print("Информация для Спорт-Кара \(brand)");
+        super.printInfo()
+        print("Спойлер - ", self.spoiler)
+        print("Крыша - ", self.roof)
+    }
+    
 }
 
 class TrunkCar : Vehicle {
@@ -272,6 +289,16 @@ class TrunkCar : Vehicle {
         }
     }
     
+    override func printInfo() {
+        print("Информация для Грузовика \(brand)")
+        super.printInfo()
+        
+        if cargoTrailer {
+            print("Карго-прицеп, обьемом \(trailerCapacity)л., заполнен на \(usedTrailerCapacity)л.")
+        } else {
+            print("Карго-прицеп не прикреплен.")
+        }
+    }
 }
 
 var AudiTT = SportCar("Audi TT", "White", 2017)
@@ -283,6 +310,7 @@ AudiTT.changeRoofState(to: .close)
 AudiTT.changeWindowsState(to: .close)
 
 AudiTT.changeEngineState(to: .off)
+
 
 var VolvoTrunk = TrunkCar("Volvo", "Black", 2010, trunk: 10, trailer: 70000)
 
@@ -298,3 +326,6 @@ print(VolvoTrunk.cargoTransportation(need: .putInTrailer, space: 48500))
 print(VolvoTrunk.cargoTransportation(need: .putInTrailer, space: 30000))
 print(VolvoTrunk.cargoTransportation(need: .putOutTrailer, space: 54000))
 print(VolvoTrunk.cargoTransportation(need: .putOutTrailer, space: 15500))
+
+AudiTT.printInfo()
+VolvoTrunk.printInfo()
