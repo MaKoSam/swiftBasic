@@ -1,0 +1,453 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Apple"
+provides-nominal:
+- "5test85AppleC"
+provides-member:
+- ["5test85AppleC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Apple"
+- "AssignmentPrecedence"
+- "CGPoint"
+- !private "CGRect"
+- !private "CollisionCategories"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- !private "SKPhysicsBody"
+- "SKShapeNode"
+- !private "UIBezierPath"
+- !private "UIColor"
+depends-member:
+- ["5test85AppleC", "CGPoint"]
+- !private ["5test85AppleC", "CGRect"]
+- !private ["5test85AppleC", "CollisionCategories"]
+- !private ["5test85AppleC", "SKPhysicsBody"]
+- !private ["5test85AppleC", "UIBezierPath"]
+- !private ["5test85AppleC", "UIColor"]
+- !private ["5test85AppleC", "deinit"]
+- !private ["5test85AppleC", "fillColor"]
+- ["5test85AppleC", "init"]
+- !private ["5test85AppleC", "lineWidth"]
+- !private ["5test85AppleC", "path"]
+- !private ["5test85AppleC", "physicsBody"]
+- !private ["5test85AppleC", "position"]
+- !private ["5test85AppleC", "strokeColor"]
+- !private ["So7CGPointV", "init"]
+- !private ["So6CGRectV", "init"]
+- !private ["s7CVarArgP", "CGPoint"]
+- !private ["s7CVarArgP", "CGRect"]
+- !private ["s7CVarArgP", "CollisionCategories"]
+- !private ["s7CVarArgP", "SKPhysicsBody"]
+- !private ["s7CVarArgP", "UIBezierPath"]
+- !private ["s7CVarArgP", "UIColor"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "categoryBitMask"]
+- !private ["s7CVarArgP", "cgPath"]
+- !private ["s7CVarArgP", "fillColor"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "lineWidth"]
+- !private ["s7CVarArgP", "path"]
+- !private ["s7CVarArgP", "physicsBody"]
+- !private ["s7CVarArgP", "position"]
+- !private ["s7CVarArgP", "red"]
+- !private ["s7CVarArgP", "strokeColor"]
+- !private ["5test819CollisionCategoriesV", "Apple"]
+- !private ["s28CustomDebugStringConvertibleP", "CGPoint"]
+- !private ["s28CustomDebugStringConvertibleP", "CGRect"]
+- !private ["s28CustomDebugStringConvertibleP", "CollisionCategories"]
+- !private ["s28CustomDebugStringConvertibleP", "SKPhysicsBody"]
+- !private ["s28CustomDebugStringConvertibleP", "UIBezierPath"]
+- !private ["s28CustomDebugStringConvertibleP", "UIColor"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "categoryBitMask"]
+- !private ["s28CustomDebugStringConvertibleP", "cgPath"]
+- !private ["s28CustomDebugStringConvertibleP", "fillColor"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "lineWidth"]
+- !private ["s28CustomDebugStringConvertibleP", "path"]
+- !private ["s28CustomDebugStringConvertibleP", "physicsBody"]
+- !private ["s28CustomDebugStringConvertibleP", "position"]
+- !private ["s28CustomDebugStringConvertibleP", "red"]
+- !private ["s28CustomDebugStringConvertibleP", "strokeColor"]
+- !private ["s29CustomPlaygroundQuickLookableP", "CGPoint"]
+- !private ["s29CustomPlaygroundQuickLookableP", "CGRect"]
+- !private ["s29CustomPlaygroundQuickLookableP", "CollisionCategories"]
+- !private ["s29CustomPlaygroundQuickLookableP", "SKPhysicsBody"]
+- !private ["s29CustomPlaygroundQuickLookableP", "UIBezierPath"]
+- !private ["s29CustomPlaygroundQuickLookableP", "UIColor"]
+- ["s29CustomPlaygroundQuickLookableP", ""]
+- !private ["s29CustomPlaygroundQuickLookableP", "fillColor"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "lineWidth"]
+- !private ["s29CustomPlaygroundQuickLookableP", "path"]
+- !private ["s29CustomPlaygroundQuickLookableP", "physicsBody"]
+- !private ["s29CustomPlaygroundQuickLookableP", "position"]
+- !private ["s29CustomPlaygroundQuickLookableP", "strokeColor"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "CGPoint"]
+- !private ["s23CustomStringConvertibleP", "CGRect"]
+- !private ["s23CustomStringConvertibleP", "CollisionCategories"]
+- !private ["s23CustomStringConvertibleP", "SKPhysicsBody"]
+- !private ["s23CustomStringConvertibleP", "UIBezierPath"]
+- !private ["s23CustomStringConvertibleP", "UIColor"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "categoryBitMask"]
+- !private ["s23CustomStringConvertibleP", "cgPath"]
+- !private ["s23CustomStringConvertibleP", "fillColor"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "lineWidth"]
+- !private ["s23CustomStringConvertibleP", "path"]
+- !private ["s23CustomStringConvertibleP", "physicsBody"]
+- !private ["s23CustomStringConvertibleP", "position"]
+- !private ["s23CustomStringConvertibleP", "red"]
+- !private ["s23CustomStringConvertibleP", "strokeColor"]
+- !private ["Se", "init"]
+- !private ["SE", "init"]
+- !private ["SQ", "CGPoint"]
+- !private ["SQ", "CGRect"]
+- !private ["SQ", "CollisionCategories"]
+- !private ["SQ", "SKPhysicsBody"]
+- !private ["SQ", "UIBezierPath"]
+- !private ["SQ", "UIColor"]
+- ["SQ", ""]
+- !private ["SQ", "categoryBitMask"]
+- !private ["SQ", "cgPath"]
+- !private ["SQ", "fillColor"]
+- !private ["SQ", "init"]
+- !private ["SQ", "init"]
+- !private ["SQ", "lineWidth"]
+- !private ["SQ", "path"]
+- !private ["SQ", "physicsBody"]
+- !private ["SQ", "position"]
+- !private ["SQ", "red"]
+- !private ["SQ", "strokeColor"]
+- !private ["SH", "CGPoint"]
+- !private ["SH", "CGRect"]
+- !private ["SH", "CollisionCategories"]
+- !private ["SH", "SKPhysicsBody"]
+- !private ["SH", "UIBezierPath"]
+- !private ["SH", "UIColor"]
+- ["SH", ""]
+- !private ["SH", "categoryBitMask"]
+- !private ["SH", "cgPath"]
+- !private ["SH", "fillColor"]
+- !private ["SH", "init"]
+- !private ["SH", "init"]
+- !private ["SH", "lineWidth"]
+- !private ["SH", "path"]
+- !private ["SH", "physicsBody"]
+- !private ["SH", "position"]
+- !private ["SH", "red"]
+- !private ["SH", "strokeColor"]
+- !private ["So8NSCodingP", "CGPoint"]
+- !private ["So8NSCodingP", "CGRect"]
+- !private ["So8NSCodingP", "CollisionCategories"]
+- !private ["So8NSCodingP", "SKPhysicsBody"]
+- !private ["So8NSCodingP", "UIBezierPath"]
+- !private ["So8NSCodingP", "UIColor"]
+- ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "categoryBitMask"]
+- !private ["So8NSCodingP", "cgPath"]
+- !private ["So8NSCodingP", "fillColor"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "lineWidth"]
+- !private ["So8NSCodingP", "path"]
+- !private ["So8NSCodingP", "physicsBody"]
+- !private ["So8NSCodingP", "position"]
+- !private ["So8NSCodingP", "red"]
+- !private ["So8NSCodingP", "strokeColor"]
+- !private ["So9NSCopyingP", "CGPoint"]
+- !private ["So9NSCopyingP", "CGRect"]
+- !private ["So9NSCopyingP", "CollisionCategories"]
+- !private ["So9NSCopyingP", "SKPhysicsBody"]
+- !private ["So9NSCopyingP", "UIBezierPath"]
+- !private ["So9NSCopyingP", "UIColor"]
+- ["So9NSCopyingP", ""]
+- !private ["So9NSCopyingP", "categoryBitMask"]
+- !private ["So9NSCopyingP", "cgPath"]
+- !private ["So9NSCopyingP", "fillColor"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "lineWidth"]
+- !private ["So9NSCopyingP", "path"]
+- !private ["So9NSCopyingP", "physicsBody"]
+- !private ["So9NSCopyingP", "position"]
+- !private ["So9NSCopyingP", "red"]
+- !private ["So9NSCopyingP", "strokeColor"]
+- !private ["So21NSItemProviderReadingP", "red"]
+- !private ["So21NSItemProviderWritingP", "red"]
+- ["So8NSObjectC", "CGPoint"]
+- !private ["So8NSObjectC", "CGRect"]
+- !private ["So8NSObjectC", "CollisionCategories"]
+- !private ["So8NSObjectC", "SKPhysicsBody"]
+- !private ["So8NSObjectC", "UIBezierPath"]
+- !private ["So8NSObjectC", "UIColor"]
+- !private ["So8NSObjectC", "categoryBitMask"]
+- !private ["So8NSObjectC", "cgPath"]
+- !private ["So8NSObjectC", "fillColor"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "lineWidth"]
+- !private ["So8NSObjectC", "path"]
+- !private ["So8NSObjectC", "physicsBody"]
+- !private ["So8NSObjectC", "position"]
+- !private ["So8NSObjectC", "red"]
+- !private ["So8NSObjectC", "strokeColor"]
+- !private ["So8NSObjectP", "CGPoint"]
+- !private ["So8NSObjectP", "CGRect"]
+- !private ["So8NSObjectP", "CollisionCategories"]
+- !private ["So8NSObjectP", "SKPhysicsBody"]
+- !private ["So8NSObjectP", "UIBezierPath"]
+- !private ["So8NSObjectP", "UIColor"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "categoryBitMask"]
+- !private ["So8NSObjectP", "cgPath"]
+- !private ["So8NSObjectP", "fillColor"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "lineWidth"]
+- !private ["So8NSObjectP", "path"]
+- !private ["So8NSObjectP", "physicsBody"]
+- !private ["So8NSObjectP", "position"]
+- !private ["So8NSObjectP", "red"]
+- !private ["So8NSObjectP", "strokeColor"]
+- !private ["So14NSSecureCodingP", "CGPoint"]
+- !private ["So14NSSecureCodingP", "CGRect"]
+- !private ["So14NSSecureCodingP", "CollisionCategories"]
+- !private ["So14NSSecureCodingP", "SKPhysicsBody"]
+- !private ["So14NSSecureCodingP", "UIBezierPath"]
+- !private ["So14NSSecureCodingP", "UIColor"]
+- ["So14NSSecureCodingP", ""]
+- !private ["So14NSSecureCodingP", "categoryBitMask"]
+- !private ["So14NSSecureCodingP", "cgPath"]
+- !private ["So14NSSecureCodingP", "fillColor"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "lineWidth"]
+- !private ["So14NSSecureCodingP", "path"]
+- !private ["So14NSSecureCodingP", "physicsBody"]
+- !private ["So14NSSecureCodingP", "position"]
+- !private ["So14NSSecureCodingP", "red"]
+- !private ["So14NSSecureCodingP", "strokeColor"]
+- ["So6SKNodeC", "CGPoint"]
+- !private ["So6SKNodeC", "CGRect"]
+- !private ["So6SKNodeC", "CollisionCategories"]
+- !private ["So6SKNodeC", "SKPhysicsBody"]
+- !private ["So6SKNodeC", "UIBezierPath"]
+- !private ["So6SKNodeC", "UIColor"]
+- !private ["So6SKNodeC", "fillColor"]
+- ["So6SKNodeC", "init"]
+- !private ["So6SKNodeC", "init"]
+- !private ["So6SKNodeC", "lineWidth"]
+- !private ["So6SKNodeC", "path"]
+- !private ["So6SKNodeC", "physicsBody"]
+- !private ["So6SKNodeC", "position"]
+- !private ["So6SKNodeC", "strokeColor"]
+- !private ["So13SKPhysicsBodyC", "categoryBitMask"]
+- !private ["So13SKPhysicsBodyC", "init"]
+- ["So11SKShapeNodeC", "CGPoint"]
+- !private ["So11SKShapeNodeC", "CGRect"]
+- !private ["So11SKShapeNodeC", "CollisionCategories"]
+- !private ["So11SKShapeNodeC", "SKPhysicsBody"]
+- !private ["So11SKShapeNodeC", "UIBezierPath"]
+- !private ["So11SKShapeNodeC", "UIColor"]
+- ["So11SKShapeNodeC", ""]
+- !private ["So11SKShapeNodeC", "fillColor"]
+- ["So11SKShapeNodeC", "init"]
+- !private ["So11SKShapeNodeC", "init"]
+- !private ["So11SKShapeNodeC", "lineWidth"]
+- !private ["So11SKShapeNodeC", "path"]
+- !private ["So11SKShapeNodeC", "physicsBody"]
+- !private ["So11SKShapeNodeC", "position"]
+- !private ["So11SKShapeNodeC", "strokeColor"]
+- !private ["So12UIBezierPathC", "cgPath"]
+- !private ["So12UIBezierPathC", "init"]
+- !private ["So7UIColorC", "red"]
+- !private ["So18UIFocusEnvironmentP", "CGPoint"]
+- !private ["So18UIFocusEnvironmentP", "CGRect"]
+- !private ["So18UIFocusEnvironmentP", "CollisionCategories"]
+- !private ["So18UIFocusEnvironmentP", "SKPhysicsBody"]
+- !private ["So18UIFocusEnvironmentP", "UIBezierPath"]
+- !private ["So18UIFocusEnvironmentP", "UIColor"]
+- ["So18UIFocusEnvironmentP", ""]
+- !private ["So18UIFocusEnvironmentP", "fillColor"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "lineWidth"]
+- !private ["So18UIFocusEnvironmentP", "path"]
+- !private ["So18UIFocusEnvironmentP", "physicsBody"]
+- !private ["So18UIFocusEnvironmentP", "position"]
+- !private ["So18UIFocusEnvironmentP", "strokeColor"]
+- !private ["So11UIFocusItemP", "CGPoint"]
+- !private ["So11UIFocusItemP", "CGRect"]
+- !private ["So11UIFocusItemP", "CollisionCategories"]
+- !private ["So11UIFocusItemP", "SKPhysicsBody"]
+- !private ["So11UIFocusItemP", "UIBezierPath"]
+- !private ["So11UIFocusItemP", "UIColor"]
+- ["So11UIFocusItemP", ""]
+- !private ["So11UIFocusItemP", "fillColor"]
+- !private ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "init"]
+- !private ["So11UIFocusItemP", "lineWidth"]
+- !private ["So11UIFocusItemP", "path"]
+- !private ["So11UIFocusItemP", "physicsBody"]
+- !private ["So11UIFocusItemP", "position"]
+- !private ["So11UIFocusItemP", "strokeColor"]
+- !private ["So30UIPasteConfigurationSupportingP", "CGPoint"]
+- !private ["So30UIPasteConfigurationSupportingP", "CGRect"]
+- !private ["So30UIPasteConfigurationSupportingP", "CollisionCategories"]
+- !private ["So30UIPasteConfigurationSupportingP", "SKPhysicsBody"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIBezierPath"]
+- !private ["So30UIPasteConfigurationSupportingP", "UIColor"]
+- ["So30UIPasteConfigurationSupportingP", ""]
+- !private ["So30UIPasteConfigurationSupportingP", "fillColor"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "lineWidth"]
+- !private ["So30UIPasteConfigurationSupportingP", "path"]
+- !private ["So30UIPasteConfigurationSupportingP", "physicsBody"]
+- !private ["So30UIPasteConfigurationSupportingP", "position"]
+- !private ["So30UIPasteConfigurationSupportingP", "strokeColor"]
+- ["So11UIResponderC", "CGPoint"]
+- !private ["So11UIResponderC", "CGRect"]
+- !private ["So11UIResponderC", "CollisionCategories"]
+- !private ["So11UIResponderC", "SKPhysicsBody"]
+- !private ["So11UIResponderC", "UIBezierPath"]
+- !private ["So11UIResponderC", "UIColor"]
+- !private ["So11UIResponderC", "fillColor"]
+- ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "lineWidth"]
+- !private ["So11UIResponderC", "path"]
+- !private ["So11UIResponderC", "physicsBody"]
+- !private ["So11UIResponderC", "position"]
+- !private ["So11UIResponderC", "strokeColor"]
+- !private ["So30UIResponderStandardEditActionsP", "CGPoint"]
+- !private ["So30UIResponderStandardEditActionsP", "CGRect"]
+- !private ["So30UIResponderStandardEditActionsP", "CollisionCategories"]
+- !private ["So30UIResponderStandardEditActionsP", "SKPhysicsBody"]
+- !private ["So30UIResponderStandardEditActionsP", "UIBezierPath"]
+- !private ["So30UIResponderStandardEditActionsP", "UIColor"]
+- ["So30UIResponderStandardEditActionsP", ""]
+- !private ["So30UIResponderStandardEditActionsP", "fillColor"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "lineWidth"]
+- !private ["So30UIResponderStandardEditActionsP", "path"]
+- !private ["So30UIResponderStandardEditActionsP", "physicsBody"]
+- !private ["So30UIResponderStandardEditActionsP", "position"]
+- !private ["So30UIResponderStandardEditActionsP", "strokeColor"]
+- !private ["So23UIUserActivityRestoringP", "CGPoint"]
+- !private ["So23UIUserActivityRestoringP", "CGRect"]
+- !private ["So23UIUserActivityRestoringP", "CollisionCategories"]
+- !private ["So23UIUserActivityRestoringP", "SKPhysicsBody"]
+- !private ["So23UIUserActivityRestoringP", "UIBezierPath"]
+- !private ["So23UIUserActivityRestoringP", "UIColor"]
+- ["So23UIUserActivityRestoringP", ""]
+- !private ["So23UIUserActivityRestoringP", "fillColor"]
+- !private ["So23UIUserActivityRestoringP", "init"]
+- !private ["So23UIUserActivityRestoringP", "init"]
+- !private ["So23UIUserActivityRestoringP", "lineWidth"]
+- !private ["So23UIUserActivityRestoringP", "path"]
+- !private ["So23UIUserActivityRestoringP", "physicsBody"]
+- !private ["So23UIUserActivityRestoringP", "position"]
+- !private ["So23UIUserActivityRestoringP", "strokeColor"]
+- !private ["s26_ExpressibleByColorLiteralP", "red"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CGPoint"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CGRect"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CollisionCategories"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "SKPhysicsBody"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIBezierPath"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "UIColor"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "categoryBitMask"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cgPath"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fillColor"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lineWidth"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "path"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "physicsBody"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "position"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "red"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "strokeColor"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+depends-nominal:
+- "5test85AppleC"
+- !private "So7CGPointV"
+- !private "So6CGRectV"
+- "s7CVarArgP"
+- !private "5test819CollisionCategoriesV"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "Se"
+- !private "SE"
+- "SQ"
+- "SH"
+- "So8NSCodingP"
+- "So9NSCopyingP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "So14NSSecureCodingP"
+- "So6SKNodeC"
+- !private "So13SKPhysicsBodyC"
+- "So11SKShapeNodeC"
+- !private "So12UIBezierPathC"
+- !private "So7UIColorC"
+- "So18UIFocusEnvironmentP"
+- "So11UIFocusItemP"
+- "So30UIPasteConfigurationSupportingP"
+- "So11UIResponderC"
+- "So30UIResponderStandardEditActionsP"
+- "So23UIUserActivityRestoringP"
+- !private "s26_ExpressibleByColorLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ModelIO.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SceneKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SpriteKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GameplayKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/ModelIO.framework/Headers/ModelIO.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/SpriteKit.framework/Headers/SpriteKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GameplayKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "c05cc0338b02aa5cc497464b23574d16"

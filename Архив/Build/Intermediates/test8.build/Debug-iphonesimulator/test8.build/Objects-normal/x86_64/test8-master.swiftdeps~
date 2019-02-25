@@ -1,0 +1,11 @@
+version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
+options: "0616ed32a6c7156be6bcd338cb660a7e"
+build_time: [1551074433, 926737000]
+inputs:
+  "/Users/SamMazniker/Downloads/\u0410\u0440\u0445\u0438\u0432/test8/Model/Snake/SnakeHead.swift": [1550818306, 0]
+  "/Users/SamMazniker/Downloads/\u0410\u0440\u0445\u0438\u0432/test8/Model/Apple.swift": [1550818255, 0]
+  "/Users/SamMazniker/Downloads/\u0410\u0440\u0445\u0438\u0432/test8/GameScene.swift": [1551074433, 0]
+  "/Users/SamMazniker/Downloads/\u0410\u0440\u0445\u0438\u0432/test8/Model/Snake/Snake.swift": [1551073807, 0]
+  "/Users/SamMazniker/Downloads/\u0410\u0440\u0445\u0438\u0432/test8/GameViewController.swift": [1550743115, 0]
+  "/Users/SamMazniker/Downloads/\u0410\u0440\u0445\u0438\u0432/test8/AppDelegate.swift": [1550742937, 0]
+  "/Users/SamMazniker/Downloads/\u0410\u0440\u0445\u0438\u0432/test8/Model/Snake/SnakeBody.swift": [1550818295, 0]
